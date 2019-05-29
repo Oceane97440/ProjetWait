@@ -21,14 +21,14 @@
     right:10px;
 }
 .soundoff{
-    background:transparent url('https://cdn.antenne.re/linfo/IMG/pub/btnVolume.png');
+    background:transparent url('https://cdn.antenne.re/linfo/IMG/pub/btnVolume.png');/*boutton volume */
     background-position:bottom left;
     -webkit-transition:bottom 1s;
     transition:bottom 1s;
 }
 
 .soundon{
-    background:transparent url('https://cdn.antenne.re/linfo/IMG/pub/btnVolume.png');
+    background:transparent url('https://cdn.antenne.re/linfo/IMG/pub/btnVolume.png');/*boutton volume */
     background-position: 0 0;-webkit-transition:bottom 1s;transition:bottom 1s;
 }
 

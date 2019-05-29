@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Test boutton play</title>
+    </head>
+    <body>
+        <button
+        onclick="Play()" id="demo"></button>
+
+        <video id="vod" width="40%" height="40%">
+            <source src="https://cdn.antennepublicite.re/linfo/IMG/pub/video/LEADER-PRICE/20190507/LEADER_PRICE-47269/HAPPY_PRICE_10S_CHARAL.mp4" type="video/mp4"/>
+        </video>
+
+        <script>
+            var video=document.getElementById("vod");
+            var btnplay=document.getElementById("demo");
+                function play() {
+                    if(video.paused){
+                        video.play();
+                        btnplay.style.background="url(play.png) no-repeat";
+                    }else {
+                        video.pause()
+                        btnplay.style.background="url(pause.png) no-repeat";
+                    }
+                    
+                }
+        
+        
+        
+        
+        </script>
+
+
+
+
+    </body>
+</html>
