@@ -1,0 +1,46 @@
+<style>
+.wrapper {
+    position: relative;
+}
+#video-overlay {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+    z-index: 9999999;
+}
+#video-overlay img {
+    width: 750px;
+    height: 480px;
+}
+</style>
+<div class="wrapper">
+    <div id='video-overlay'>
+        <img src="zeop.PNG" />
+    </div>
+    <video id="video" controls autoplay>
+        <source id="mp4" src="https://cdn.antennepublicite.re/linfo/IMG/pub/video/LEADER-PRICE/20190507/LEADER_PRICE-47269/HAPPY_PRICE_10S_CHARAL.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+        var overlay= document.getElementById('video-overlay'),
+        video= document.getElementById('video'),
+        videoPlaying = false;
+
+        function hideOverlay() {
+        overlay.style.display = "none";
+        videoPlaying = true;
+        video.play();
+        }
+
+        function showOverlay() {
+            if (video.readyState === 4) {
+        overlay.style.display = "block";
+        videoPlaying = true;
+        }
+        }   
+
+    video.addEventListener('pause', showOverlay);
+    overlay.addEventListener('click', hideOverlay);
+</script>

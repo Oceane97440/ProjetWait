@@ -1,0 +1,32 @@
+<head><link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet"></head>
+
+<body>
+
+        
+                <video id="vod" class='video-js'>
+                    <source src="https://cdn.antennepublicite.re/linfo/IMG/pub/video/LEADER-PRICE/20190507/LEADER_PRICE-47269/HAPPY_PRICE_10S_CHARAL.mp4" type="video/mp4"/>
+                </video>
+        
+                <div id="pub"><img src="zeop.PNG" /></div>
+                <script src='https://vjs.zencdn.net/7.5.4/video.js'></script>
+                <script>
+                    var video = document.getElementById("vod")
+                    var pub = document.getElementById("pub")
+        
+                    var myPlayer = videojs("vod", {
+                        controls: true,
+                        autoplay: false,
+                        preload: 'auto'
+                    });
+        
+                    myPlayer.on("pause", function () {
+                        pub.innerHTML = 'PUB affiché' ;
+                        console.log(pub);
+                    });
+                    myPlayer.on("play", function () {
+                        pub.innerHTML = 'pub invisible';
+                        console.log('pub invisible');
+                    });
+                </script>
+        
+    </body>
