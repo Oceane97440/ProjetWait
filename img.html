@@ -1,0 +1,34 @@
+<!--Affiche img via a un boutton-->
+<style>
+        img{
+        display: none;
+        }
+        
+        </style>
+        <button id="pub">Afficher Image </button>
+        <img src="zeop.PNG" alt=""/>
+         <script>
+             var button = document.getElementsByTagName('button')[0];
+            var image = document.getElementsByTagName('img')[0];
+        
+            window.afficher = function(){
+            image.style.display = (image.style.display == "block") ? "none" : "block";
+           
+            }
+        
+        
+        
+            button.onclick = afficher;
+         
+         
+         </script>
+
+
+
+
+
+
+
+
+
+
