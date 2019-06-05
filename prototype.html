@@ -1,40 +1,40 @@
 <style>
-.wrapper {
+.rectangle_vod {
     position: relative;
 }
-#video-overlay {
+#vod_affiche {
     top: 0;
     left: 0;
     position: absolute;
     display: none;
     z-index: 9999999;
 }
-#video-overlay img {
+#vod_affiche img {
     width: 750px;
     height: 480px;
 }
 </style>
-<div class="wrapper">
-    <div id='video-overlay'>
-        <img src="zeop.PNG" />
+<div class="rectangle_vod">
+    <div id='vod_affiche'>
+        <img src="zeop.PNG" /><!--Img-->
     </div>
-    <video id="video" controls autoplay>
+    <video id="video" controls autoplay><!--vod-->
         <source id="mp4" src="https://cdn.antennepublicite.re/linfo/IMG/pub/video/LEADER-PRICE/20190507/LEADER_PRICE-47269/HAPPY_PRICE_10S_CHARAL.mp4" type="video/mp4">
     </video>
 </div>
 
 <script>
-        var overlay= document.getElementById('video-overlay'),
+        var overlay= document.getElementById('vod_affiche'),//superposition vidéo
         video= document.getElementById('video'),
         videoPlaying = false;
 
-        function hideOverlay() {
+        function hideOverlay() { //masquer la superposition
         overlay.style.display = "none";
         videoPlaying = true;
         video.play();
         }
 
-        function showOverlay() {
+        function showOverlay() { //afficher la superposition
             if (video.readyState === 4) {
         overlay.style.display = "block";
         videoPlaying = true;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://vjs.zencdn.net/7.5.4/video-js.css" rel="stylesheet">
+
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <style>
+        .wrapper {
+            position: relative;
+        }
+        .video-overlay {
+            top: 0;
+            left: 0;
+            position: absolute;
+            display: none;
+            z-index: 9999999;
+        }
+        .video-overlay img {
+            width: 750px;
+            height: 480px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <div class='wrapper'>
+            <div id="pub" class="video-overlay"><img src="zeop.png" /></div>
+            <video id="vod" class='video-js'>
+                <source src="https://cdn.antennepublicite.re/linfo/IMG/pub/video/LEADER-PRICE/20190507/LEADER_PRICE-47269/HAPPY_PRICE_10S_CHARAL.mp4" type="video/mp4"/>
+            </video>
+        </div>
+        
+
+        <div id="pub"></div>
+        <script src='https://vjs.zencdn.net/7.5.4/video.js'></script>
+        <script>
+            var video = document.getElementById("vod")
+            var pub = document.getElementById("pub")
+
+            var myPlayer = videojs("vod", {
+                controls: true,
+                autoplay: false,
+                preload: 'auto'
+            });
+
+            myPlayer.on("pause", function () {
+                console.log(pub);
+                pub.style.display = "block";
+            });
+            myPlayer.on("play", function () {
+                pub.style.display = "none";
+                console.log('pub play invisible');
+            });
+            pub.addEventListener('click', function (e){
+                myPlayer.play();
+            });
+
+        </script>
+    </body>
+</html>
