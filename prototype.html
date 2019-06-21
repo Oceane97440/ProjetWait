@@ -7,20 +7,33 @@
     left: 0;
     position: absolute;
     display: none;
-    z-index: 9999999;
+    z-index: 99997;
+    border: 1px solid black;
+    background-color: coral;
+    width: 500px;
+    height: 350px;
+    -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
-#vod_affiche img {
-    width: 750px;
-    height: 480px;
+
+
+#video {
+    width: 500px;
+    height: 350px;
+    background-color: black;
 }
 </style>
 <div class="rectangle_vod">
     <div id='vod_affiche'>
-        <img src="zeop.PNG" /><!--Img-->
+       <!-- <img src="zeop.PNG" />Img-->
+       <p>DIV IMG</p>
     </div>
-    <video id="video" controls autoplay><!--vod-->
+    <video id="video" controls autoplay muted autoplay="false"><!--vod-->
         <source id="mp4" src="https://cdn.antennepublicite.re/linfo/IMG/pub/video/LEADER-PRICE/20190507/LEADER_PRICE-47269/HAPPY_PRICE_10S_CHARAL.mp4" type="video/mp4">
     </video>
+   
 </div>
 
 <script>
