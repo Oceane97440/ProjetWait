@@ -1,6 +1,13 @@
 Projet:Format Wait
 Objectif:Etre le 1er localement à proposé se nouveu format
 
-Fonctionnalité: Le visiteur en regardent son programme vidéo, quand clic le boutton pause un pub intertitiel pop
+Fonctionnalité: Le visiteur en regardent son programme vidéo, quand clic le boutton pause un pub intertitiel s'affiche
+Quand le play est lancé intertitiel ne s'affiche plus
+
 A faire:Crée un prototype simple avec cette fonctionalité
-Delais: 7/06 présenté quelque chose
+Delais: 7/06 présenté quelque chose -> prototype deja crée 
+
+Objectif: crée une effet de transition avec css/js 
+Crée une condiction quand le preroll se lance pas intertitiel
+Quand le preroll est terminer le programme se lance et intertitiel en pause s'affiche
+Delais: ? En cours de recherche 

@@ -1,0 +1,59 @@
+<style>
+.rectangle_vod {
+    position: relative;
+}
+#vod_affiche {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+    z-index: 99997;
+    border: 1px solid black;
+    background-color: coral;
+    width: 500px;
+    height: 350px;
+    -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+
+#video {
+    width: 500px;
+    height: 350px;
+    background-color: black;
+}
+</style>
+<div class="rectangle_vod">
+    <div id='vod_affiche'>
+       <!-- <img src="zeop.PNG" />Img-->
+       <p>DIV IMG</p>
+    </div>
+    <video id="video" controls autoplay muted autoplay="false"><!--vod-->
+        <source id="mp4" src="https://cdn.antennepublicite.re/linfo/IMG/pub/video/LEADER-PRICE/20190507/LEADER_PRICE-47269/HAPPY_PRICE_10S_CHARAL.mp4" type="video/mp4">
+    </video>
+   
+</div>
+
+<script>
+        var overlay= document.getElementById('vod_affiche'),//superposition vidéo
+        video= document.getElementById('video'),
+        videoPlaying = false;
+
+        function hideOverlay() { //masquer la superposition
+        overlay.style.display = "none";
+        videoPlaying = true;
+        video.play();
+        }
+
+        function showOverlay() { //afficher la superposition
+            if (video.readyState === 4) {
+        overlay.style.display = "block";
+        videoPlaying = true;
+        }
+        }   
+
+    video.addEventListener('pause', showOverlay);
+    overlay.addEventListener('click', hideOverlay);
+</script>

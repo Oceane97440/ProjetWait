@@ -1,0 +1,108 @@
+<script> //gestion du preroll
+        function jw(mes_options) {
+        var default_options = {
+            width: '100%',
+            ga: {},
+            aspectratio: '16:9',
+            abouttext: 'Antenne Réunion',
+            aboutlink: 'http://www.antennereunion.fr',
+            autostart: 'true',
+            advertising: {
+                client: 'vast',
+                skipmessage: 'XX secondes',
+                skiptext: 'Passer',
+                admessage: 'Publicite - Fin dans XX secondes',
+                companiondiv: {id: "companion_top", width: "728", height: "90"},
+                //companiondiv: { id:"companion_right", width:"300", height:"250"},
+                schedule: scheduling
+            }
+        };
+         //add loader 08 NOv 2018
+         jwplayer('playerqwjdIcLZTGfo').on('ready', function() {
+            $('#loader_video').css('display','none');
+            //jwplayer('playerqwjdIcLZTGfo').play();
+        });
+        jwplayer_options = $.extend({}, mes_options, default_options);
+
+        jwplayer('playerqwjdIcLZTGfo').setup(jwplayer_options);
+        var adPause = true;
+
+
+            jwplayer('playerqwjdIcLZTGfo').on('viewable',function(res2) {
+                if (res2.viewable == 0 && adPause == true){
+                    jwplayer('playerqwjdIcLZTGfo').pause(true);
+                }
+                else if (res2.viewable == 1 && adPause == true){ 
+                    jwplayer('playerqwjdIcLZTGfo').pause(false);
+                }
+        });
+     
+        jwplayer('playerqwjdIcLZTGfo').on('adBreakStart', function(res) { 
+                //console.log("start")
+                adPause = true
+     
+             });
+        jwplayer('playerqwjdIcLZTGfo').on('adBreakEnd', function(res) { 
+                // console.log("end")
+               adPause = false
+    
+            });
+    }
+
+function lazyLoadVidPauseDown(videoID) {
+        if (lazyLoadVidDebug == 'true') {
+          console.log(' setting lazyLoadVidPauseDown function for ' + videoID + ' ...');
+        }
+        $(videoID).waypoint(function(direction) {
+          if (direction === 'down') {
+            if (lazyLoadVidDebug == 'true') {
+              console.log('pausing down on ' + videoID)
+            }
+              var vid = $(videoID).get(0);
+              vid.pause()
+          }
+         
+          }, {
+            offset: '-100%'
+          }
+        );
+      };
+
+
+      //Reglementation des devices preroll/midroll
+      //App Mobile
+      function get_duree_ad(duration, devices) {
+        if (devices == "mobile") {
+            if (duration < 300) {
+                dureeEcranPre = 40;
+            }
+            else if (duration < 900) {
+                dureeEcranPre = 44;
+            }
+            else {
+                dureeEcranPre = 63;
+            }
+            // console.log("la durée de la preroll est : " + dureeEcranPre);
+            dureeEcranMid = 126;
+            // console.log("la durée de la mid est : " + dureeEcranMid);
+        }
+
+
+        //Desktop/Tab
+        else {
+            if (duration < 300) { //300sec=5min si video <5min 
+                dureeEcranPre = 40; //la durée total du prerol=40
+            }
+            else if (duration < 900) { // 900=15min sinon si vod < 15min
+                dureeEcranPre = 63; //total prerol=63
+            }
+            else {
+                dureeEcranPre = 84; //sinon >15min prerol=84sec
+            }
+            // console.log("la durée de la preroll est : " + dureeEcranPre);
+            dureeEcranMid = 147;
+            // console.log("la durée de la mid est : " + dureeEcranMid);
+        }
+    }
+
+</script>
