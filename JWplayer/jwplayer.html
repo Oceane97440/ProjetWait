@@ -1,60 +1,66 @@
-<!--<html>
-    <head>
-            <script src = "https://cdn.jwplayer.com/players/UVQWMA4o-kGWxh33Q.js" > </script> 
 
-    <title>Bloc video JwPlayer</title>
-    </head>
-
-    <body>
-        <script>
-            jwplayer("myDiv").setup({
-                "file": "https://cdn.antennepublicite.re/linfo/IMG/pub/video/S2FOI_QUICK/BURGER_KING-47837/V2.mp4",
-                "image": "http://sti2dtransversal.free.fr/images/freemobile.png",
-                "height": 360,
-                "width": 640
-             });
-             setConfig([{
-                repeat: true,
-                autostart: 'viewable',
-                mute: false,
-                volume: 25
-            }]);
-        </script>
-
-
-    </body>
-
-
-
-
-
-</html>-->
 
 <html>
   <head>
     
         <title>Bloc video JwPlayer</title>
-        <script src="https://cdn.jwplayer.com/players/ADfZfxIT-B7nq18h5.js"></script><!--Id video pub jwplayer-->
-        <!--<div itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="uploadDate" content="Thu Jun 27 2019 10:13:13 GMT+0400 (heure du Golfe)"/>
-            <meta itemprop="name" content="V2"/><meta itemprop="duration" content="PT12S" /><meta itemprop="thumbnailUrl" content="https://content.jwplatform.com/thumbs/4OBrEx6N-480.jpg"/>
-            <meta itemprop="contentUrl" content="https://content.jwplatform.com/videos/4OBrEx6N-f3Gtk4Us.mp4"/>
-            <script src="https://cdn.jwplayer.com/players/4OBrEx6N-ctwMqhdJ.js"></script>
-            </div>-->
+        <!--Id video pub jwplayer<script src="https://cdn.jwplayer.com/players/ADfZfxIT-B7nq18h5.js"></script>-->
+        <script  src = "jquery-3.3.1.slim.min.js"></script>
+        <script charset="utf-8" src="https://cdn.jwplayer.com/players/ADfZfxIT-B7nq18h5.js"></script>
+
+      
   </head>
   <body>
-
-<!--]-->
-
+     
         <script type="text/javascript"> //bloc video pub lecteur
-            jwplayer("myvideo5").setup({
+        jwplayer("myvideo5").setup({
             "file": "https://cdn.antenne.re/nas/Vous_1906261900.mp4",
             "image": "http://sti2dtransversal.free.fr/images/freemobile.png",
             "height": 360,
             "width": 440
-            });
-        </script>
-<!--Gestion du preroll 
+            
+          });
+          
+
+  //jwplayer().play();   
+  jQuery(window).load(function () {
+        jwplayer().play();      
+});
+</script>
+   /* 
+   
+   
+    advertising:{
+                         client: 'vast',
+                         skipmessage:'XX secondes',
+                         skiptext:'Passer',
+                         admessage: 'Publicite - Fin dans XX secondes',
+                         companiondiv: { id:"companion_top", width:"728", height:"90"},                       
+                         schedule: {
+                          adbreak1 : {
+                                    offset:'pre',
+                                    tag: 'https://www8.smartadserver.com/ac?siteid=299244&pgid=1108381&fmtid=43791&ab=1&tgt=&oc=1&out=vast4&ps=1&pb=0&visit=S&vcn=s&tmstp=[timestamp]'
+                                }
+                              }
+                }
+   
+   
+   advertising: {
+                client: "vast",
+                adscheduleid: "5fqgUqft",
+                schedule: {
+                adbreak1 : {
+                offset:'pre',
+                tag: 'https://www8.smartadserver.com/ac?siteid=299244&pgid=1108381&fmtid=43791&ab=1&tgt=&oc=1&out=vast4&ps=1&pb=0&visit=S&vcn=s&tmstp=[timestamp]'
+            }
+          }
+
+    }*/
+           
+            
+    </script>
+
+    <!--Gestion du preroll 
     scheduling = {
     adbreak1 : {
         offset:'pre',
@@ -71,6 +77,24 @@ console.log(scheduling);
              companiondiv: { id:"companion_top", width:"728", height:"90"},                       
              schedule: scheduling
     }-->
-    
+  <!-- jwplayer("myElement").setup({
+    "playlist": [
+      {
+        "file": "https://cdn.antenne.re/nas/Vous_1906261900.mp4"
+      }
+    ],
+    "advertising": {
+      "client": "vast",
+      "adscheduleid": "5fqgUqft",
+      "schedule": "http://www8.smartadserver.com/ac?siteid=299244&pgid=1108381&fmtid=43791&ab=1&tgt=&oc=1&out=vast4&ps=1&pb=0&visit=S&vcn=s&tmstp=[timestamp]"
+      "rules": {
+        "startOn": 1,
+        "frequency": 1,
+        "timeBetweenAds": 300,
+        "startOnSeek": "pre",
+      }
+    }
+  });-->
+
   </body>
 </html>

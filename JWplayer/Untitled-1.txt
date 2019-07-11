@@ -1,0 +1,20 @@
+<script charset="utf-8" src="//ssl.p.jwpcdn.com/player/v/8.9.2/jwplayer.core.controls.html5.js"></script>
+
+
+
+ jwplayer('playerqwjdIcLZTGfo').setup({  "image": "http://sti2dtransversal.free.fr/images/freemobile.png",
+            "height": 360,
+            "width": 440,
+
+       sources: [
+                    {file: "https://cdn.antenne.re/nas/Vous_1906261900.mp4"}
+                    ]},
+ });
+
+<script>
+jQuery(window).load(function () {
+        jwplayer().play();      
+});
+</script>
+
+ajouter la bibliotèque de jQuery
